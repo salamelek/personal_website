@@ -1,9 +1,17 @@
-/*use only classes for styling*/
+/*MAIN STUFF*/
 
 :root {
     /*color palette */
-    --almost-black: rgb(24, 24, 24);
-    --nice-green: rgb(25, 89, 52);
+    --text-color: rgb(246, 237, 238);
+    --button-color: rgb(129, 96, 4);
+    --link-color: rgb(38, 0, 0);
+    --dark-blue: rgb(0, 3, 49);
+    --bcg-color: rgb(20, 20, 20);
+
+    /*transitions time*/
+    --delay-short: 200ms;
+    --delay-mid: 500ms;
+    --delay-long: 1000ms;
 }
 
 *, *::before, *::after {
@@ -11,27 +19,63 @@
 }
 
 body {
-    background: var(--almost-black);
+    background: var(--bcg-color);
 }
 
 p, h1, h2, h3 {
-    color: white;
+    color: var(--text-color);
 }
 
 a {
-    color: #abffff;
+    color: var(--button-color);
+    text-decoration: none;
 }
+
+/*HEADER*/
+
+header {
+    background: var(--link-color);
+}
+
+header a {
+    transition: font-size var(--delay-long);
+}
+
+header a:hover{
+    font-size: 110%;
+    transition: font-size var(--delay-short);
+}
+
+/*NAVIGATION*/
+
+nav a {
+    margin: 0 0.5em;
+    padding: 0.5em;
+}
+
+nav {
+    -webkit-box-pack: center;
+    display: flex;
+    flex-wrap: wrap;
+    /*font-size: var(--fs-300);*/
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+/*TESTING*/
 
 .test::before {
     content: "";
-    background: var(--nice-green);
+    background: var(--button-color);
     display: block;
     height: 3px;
 }
 
 .test::after {
     content: "";
-    background: var(--nice-green);
+    background: var(--button-color);
     display: block;
     height: 3px;
 }
@@ -44,33 +88,75 @@ a {
     content: close-quote;
 }
 
+/*COOL LINK*/
+
 .cool-link{
     position: relative;
 }
 
 .cool-link::after {
     --width: 200%;
+    color: var(--dark-blue);
     content: "Go to link";
     width: var(--width);
     text-align: center;
     display: block;
     position: absolute;
-    background-color: var(--nice-green);
+    background: linear-gradient(
+        rgb(0 0 0 / 0),
+        var(--button-color)
+    );
     padding: 1em;
     border-radius: 0.5em;
     /*bottom: -100%;*/
-    top: -100%;
+    top: -50%;
     left: calc(50% - var(--width) / 2);
     white-space: nowrap;
     transform: scale(0);
     transition:
-            transform 500ms ease,
+            transform var(--delay-mid) ease,
             /*bottom ease 500ms;*/
-            top ease 500ms;
+            top ease var(--delay-mid);
 }
 
 .cool-link:hover::after {
     transform: scale(1);
     /*bottom: 100%;*/
-    top: 100%;
+    top: 110%;
+}
+
+/*BACK TO TOP*/
+html {
+    scroll-behavior: smooth;
+}
+
+.topButton {
+    --btn-size: 60px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    background-size: 100%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-image: url("./images/back_to_top.png");
+}
+
+.topButton::before {
+    --btn-text-width: 5em;
+    position: absolute;
+    content: "Back to top";
+    display: block;
+    white-space: nowrap;
+    width: var(--btn-text-width);
+    left: calc(var(--btn-text-width) * -1);
+    top: calc(50% - 1em / 2);
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform var(--delay-short) ease;
+    background: #F7F7F7;
+    border-radius: 0.1em;
+}
+
+.topButton:hover::before {
+    transform: scale(1);
 }
