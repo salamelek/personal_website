@@ -1,1 +1,76 @@
 /*use only classes for styling*/
+
+:root {
+    /*color palette */
+    --almost-black: rgb(24, 24, 24);
+    --nice-green: rgb(25, 89, 52);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--almost-black);
+}
+
+p, h1, h2, h3 {
+    color: white;
+}
+
+a {
+    color: #abffff;
+}
+
+.test::before {
+    content: "";
+    background: var(--nice-green);
+    display: block;
+    height: 3px;
+}
+
+.test::after {
+    content: "";
+    background: var(--nice-green);
+    display: block;
+    height: 3px;
+}
+
+.quote::before {
+    content: open-quote;
+}
+
+.quote::after {
+    content: close-quote;
+}
+
+.cool-link{
+    position: relative;
+}
+
+.cool-link::after {
+    --width: 200%;
+    content: "Go to link";
+    width: var(--width);
+    text-align: center;
+    display: block;
+    position: absolute;
+    background-color: var(--nice-green);
+    padding: 1em;
+    border-radius: 0.5em;
+    /*bottom: -100%;*/
+    top: -100%;
+    left: calc(50% - var(--width) / 2);
+    white-space: nowrap;
+    transform: scale(0);
+    transition:
+            transform 500ms ease,
+            /*bottom ease 500ms;*/
+            top ease 500ms;
+}
+
+.cool-link:hover::after {
+    transform: scale(1);
+    /*bottom: 100%;*/
+    top: 100%;
+}
