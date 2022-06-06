@@ -37,32 +37,9 @@ header {
     background: var(--link-color);
 }
 
-.headerLink {
+.nav-ink {
     transition: font-size var(--delay-long);
     position: relative;
-}
-
-.headerLink::after {
-    --line-width: 80%;
-    content: "";
-    position: absolute;
-    display: block;
-    background: var(--button-color);
-    height: 3px;
-    width: var(--line-width);
-    left: calc((100% - var(--line-width)) / 2);
-    transform: scale(0);
-    transition: var(--delay-short) ease;
-}
-
-.headerLink:hover::after {
-    transform: scale(1);
-    transition: var(--delay-short) ease;
-}
-
-.headerLink:hover{
-    font-size: 110%;
-    transition: font-size var(--delay-short);
 }
 
 /*NAVIGATION*/
@@ -82,36 +59,27 @@ nav {
     text-transform: uppercase;
 }
 
-/*TESTING*/
-
-.test {
-    position: fixed;
-    right: 2em;
-    bottom: 2em;
-    /*background-image: url("./images/back_to_top.png");*/
-}
-
-.test::before {
-    outline: 1px solid red;
-    content: "Back to top";
+.nav-ink::after {
+    --line-width: 80%;
+    content: "";
+    position: absolute;
+    display: block;
     background: var(--button-color);
-    display: inline-block;
-    white-space: nowrap;
+    height: 3px;
+    width: var(--line-width);
+    left: calc((100% - var(--line-width)) / 2);
     transform: scale(0);
-    transition: 500ms ease;
-    transform-origin: right;
+    transition: var(--delay-short) ease;
 }
 
-.test:hover::before {
+.nav-ink:hover::after {
     transform: scale(1);
+    transition: var(--delay-short) ease;
 }
 
-.quote::before {
-    content: open-quote;
-}
-
-.quote::after {
-    content: close-quote;
+.nav-ink:hover{
+    font-size: 110%;
+    transition: font-size var(--delay-short);
 }
 
 /*COOL LINK*/
@@ -168,12 +136,16 @@ html {
     display: block;
     white-space: nowrap;
     position: absolute;
-    left: calc(var(--width) * -1);
+    left: calc(var(--width) / -1.4);
     top: 20%;
+    background: var(--button-color);
+    padding: 3px;
+    border-radius: 3px;
+    color: var(--dark-blue);
     /*ANIMATIONS*/
     transform: scale(0);
     transform-origin: right;
-    transition: var(--delay-mid) ease, opacity var(--delay-mid) ease;
+    transition: var(--delay-short) ease;
 }
 
 .topButton:hover::before {
@@ -181,5 +153,5 @@ html {
 }
 
 .topButtonImg {
-    width: 2em;
+    width: 3em;
 }
