@@ -37,11 +37,30 @@ header {
     background: var(--link-color);
 }
 
-header a {
+.headerLink {
     transition: font-size var(--delay-long);
+    position: relative;
 }
 
-header a:hover{
+.headerLink::after {
+    --line-width: 80%;
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--button-color);
+    height: 3px;
+    width: var(--line-width);
+    left: calc((100% - var(--line-width)) / 2);
+    transform: scale(0);
+    transition: var(--delay-short) ease;
+}
+
+.headerLink:hover::after {
+    transform: scale(1);
+    transition: var(--delay-short) ease;
+}
+
+.headerLink:hover{
     font-size: 110%;
     transition: font-size var(--delay-short);
 }
@@ -57,7 +76,6 @@ nav {
     -webkit-box-pack: center;
     display: flex;
     flex-wrap: wrap;
-    /*font-size: var(--fs-300);*/
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -139,19 +157,19 @@ html {
 }
 
 .topButton {
-    outline: 1px solid red;
     position: fixed;
     right: 1rem;
     bottom: 1rem;
 }
 
 .topButton::before {
-    /*outline: 1px solid red;*/
-    content: "";
-    display: inline-block;
+    --width: 240%;
+    content: "Back to top";
+    display: block;
     white-space: nowrap;
-    position: relative;
-    left: -2px;
+    position: absolute;
+    left: calc(var(--width) * -1);
+    top: 20%;
     /*ANIMATIONS*/
     transform: scale(0);
     transform-origin: right;
@@ -160,5 +178,8 @@ html {
 
 .topButton:hover::before {
     transform: scale(1);
-    content: "Back to top";
+}
+
+.topButtonImg {
+    width: 2em;
 }
