@@ -66,18 +66,26 @@ nav {
 
 /*TESTING*/
 
+.test {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    /*background-image: url("./images/back_to_top.png");*/
+}
+
 .test::before {
+    outline: 1px solid red;
     content: "Back to top";
     background: var(--button-color);
     display: inline-block;
     white-space: nowrap;
+    transform: scale(0);
+    transition: 500ms ease;
+    transform-origin: right;
 }
 
-.test::after {
-    content: "a";
-    background: var(--button-color);
-    display: inline-block;
-    position: absolute;
+.test:hover::before {
+    transform: scale(1);
 }
 
 .quote::before {
@@ -138,17 +146,19 @@ html {
 }
 
 .topButton::before {
-    outline: 1px solid red;
-    position: absolute;
-    content: "Back to top";
+    /*outline: 1px solid red;*/
+    content: "";
     display: inline-block;
     white-space: nowrap;
+    position: relative;
+    left: -2px;
+    /*ANIMATIONS*/
+    transform: scale(0);
     transform-origin: right;
-    transition: transform var(--delay-short) ease;
-    background: black;
-    /*transform: scale(0);*/
+    transition: var(--delay-mid) ease, opacity var(--delay-mid) ease;
 }
 
 .topButton:hover::before {
     transform: scale(1);
+    content: "Back to top";
 }
