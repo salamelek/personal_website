@@ -67,17 +67,17 @@ nav {
 /*TESTING*/
 
 .test::before {
-    content: "";
+    content: "Back to top";
     background: var(--button-color);
-    display: block;
-    height: 3px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .test::after {
-    content: "";
+    content: "a";
     background: var(--button-color);
-    display: block;
-    height: 3px;
+    display: inline-block;
+    position: absolute;
 }
 
 .quote::before {
@@ -131,30 +131,22 @@ html {
 }
 
 .topButton {
-    --btn-size: 60px;
-    width: var(--btn-size);
-    height: var(--btn-size);
-    background-size: 100%;
+    outline: 1px solid red;
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-image: url("./images/back_to_top.png");
+    right: 1rem;
+    bottom: 1rem;
 }
 
 .topButton::before {
-    --btn-text-width: 5em;
+    outline: 1px solid red;
     position: absolute;
     content: "Back to top";
-    display: block;
+    display: inline-block;
     white-space: nowrap;
-    width: var(--btn-text-width);
-    left: calc(var(--btn-text-width) * -1);
-    top: calc(50% - 1em / 2);
-    transform: scale(0);
     transform-origin: right;
     transition: transform var(--delay-short) ease;
-    background: #F7F7F7;
-    border-radius: 0.1em;
+    background: black;
+    /*transform: scale(0);*/
 }
 
 .topButton:hover::before {
