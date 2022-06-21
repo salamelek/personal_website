@@ -31,10 +31,16 @@ a {
     text-decoration: none;
 }
 
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 /*HEADER*/
 
 header {
     background: var(--link-color);
+    min-height: 7em;
 }
 
 .nav-ink {
@@ -82,6 +88,22 @@ nav {
     transition: font-size var(--delay-short);
 }
 
+/*FOOTER*/
+
+footer {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-col-span-4 {
+    grid-column: span 4;
+}
+
+footer > * {
+    margin: 0 auto;
+}
+
 /*COOL LINK*/
 
 .cool-link{
@@ -124,34 +146,36 @@ html {
     scroll-behavior: smooth;
 }
 
-.topButton {
+.top-btn-container {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    bottom: 1em;
+    right: 2em;
 }
 
-.topButton::before {
-    --width: 240%;
+.top-btn-link {
+    display: flex;
+    border-radius: 50%;
+    position: relative;
+}
+
+.top-btn-img {
+    width: 3em;
+}
+
+.top-btn-link::before {
     content: "Back to top";
-    display: block;
-    white-space: nowrap;
     position: absolute;
-    left: calc(var(--width) / -1.4);
-    top: 20%;
-    background: var(--button-color);
-    padding: 3px;
-    border-radius: 3px;
-    color: var(--dark-blue);
+    white-space: nowrap;
+    right: calc(100% + 3px);
+    bottom: 30%;
     /*ANIMATIONS*/
     transform: scale(0);
+    transition: var(--delay-mid) ease;
     transform-origin: right;
-    transition: var(--delay-short) ease;
 }
 
-.topButton:hover::before {
+.top-btn-link:hover::before {
+    /*ANIMATIONS*/
     transform: scale(1);
-}
-
-.topButtonImg {
-    width: 3em;
+    pointer-events: none;
 }
