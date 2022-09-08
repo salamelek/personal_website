@@ -1,3 +1,9 @@
+/*debug stuff*/
+
+.border {
+    border: 1px solid red;
+}
+
 /*MAIN STUFF*/
 
 :root {
@@ -79,8 +85,11 @@ nav {
     display: block;
     background: var(--text-color);
     height: 3px;
+    border-radius: 5px;
+
     width: var(--line-width);
     left: calc((100% - var(--line-width)) / 2);
+
     transform: scale(0);
     transition: var(--delay-mid) ease;
 }
@@ -111,6 +120,27 @@ nav {
 
 }
 
+/*CURRICULUM*/
+
+.curriculum-sheet {
+
+}
+
+.curriculum-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.curriculum-header-img img {
+    width: 10em;
+}
+
+.curriculum-side-wrapper {
+    display: grid;
+    grid-gap: 2em;
+}
+
 /*FOOTER*/
 
 footer {
@@ -129,6 +159,7 @@ footer ul {
     display: flex;
     justify-content: center;
     height: 1em;
+    padding-bottom: 3em;
 }
 
 footer ul li {
