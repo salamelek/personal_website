@@ -1,7 +1,7 @@
 /*debug stuff*/
 
 .border {
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 /*MAIN STUFF*/
@@ -25,6 +25,7 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
+    font-family: Alaska,sans-serif;
 }
 
 body {
@@ -108,7 +109,7 @@ nav {
 
 .project-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
     align-items: start;
     gap: 2rem;
     margin: 6rem calc(30% - 30vw);
@@ -123,7 +124,12 @@ nav {
 /*CURRICULUM*/
 
 .curriculum-sheet {
+    padding: 2em;
+    border-radius: 1em;
+}
 
+.curriculum-sheet li {
+    padding: 0.5em 0;
 }
 
 .curriculum-header {
@@ -133,12 +139,92 @@ nav {
 }
 
 .curriculum-header-img img {
-    width: 10em;
+    width: 6em;
+    border-radius: 1em;
+}
+
+.curriculum-content {
+    padding: 1em;
+    border-right: 1px solid black;
 }
 
 .curriculum-side-wrapper {
     display: grid;
-    grid-gap: 2em;
+    grid-gap: 1em;
+    grid-template-columns: auto;
+}
+
+.curriculum-main-side-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+}
+
+.curriculum-side-card {
+    padding: 1em;
+    border-radius: 1em;
+}
+
+/*CONTACT LIST*/
+
+.contacts-card ul {
+    padding: 0;
+}
+
+.contacts-card li {
+    list-style: none;
+    position: relative;
+    display: table;
+    cursor: pointer;
+}
+
+.contacts-card li::before {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-right: 0.5em;
+}
+
+.li-gmail::before {
+    background-image: url("../images/gmail_logo.png");
+}
+
+.li-phone::before {
+    background-image: url("../images/mobile-phone.png");
+}
+
+.li-instagram::before {
+    background-image: url("../images/instagram_logo.png");
+}
+
+.copied::after {
+    content: "Copied!" !important;
+}
+
+.contacts-card li::after {
+    content: "Click to copy";
+    transform: scale(0) translateX(-50%);
+    background: gray;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: 85%;
+    white-space: nowrap;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    pointer-events: none;
+
+    transition: transform var(--delay-short);
+    transform-origin: left bottom;
+}
+
+.contacts-card li:hover::after {
+    transform: scale(1) translateX(-50%);
+    transform-origin: left bottom;
 }
 
 /*FOOTER*/
@@ -146,7 +232,6 @@ nav {
 footer {
     padding: 2em;
     background-color: var(--bcg-color);
-    z-index: -1;
 }
 
 footer p {
