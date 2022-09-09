@@ -166,6 +166,42 @@ nav {
     border-radius: 1em;
 }
 
+/*SKILLS CARD*/
+
+.skills-card {
+    transform: scale(1);
+    transition: transform var(--delay-short);
+    position: relative;
+    cursor: pointer;
+}
+
+.skills-card:hover {
+    /*TODO hr is empty when zooming*/
+    transform: scale(1.05);
+    transition: transform var(--delay-mid);
+}
+
+.skills-card::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border-radius: 0.5em;
+    bottom: 3px;
+    height: 3px;
+    width: 95%;
+    background: green;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: left;
+    transition-duration: var(--delay-short);
+}
+
+.skills-card:hover::after {
+    transform: translateX(-50%) scaleX(1);
+    transition: linear calc(var(--delay-long) * 2) var(--delay-long);
+    /*TODO when the green bar gets to the end, bring out a more detailed description*/
+}
+
 /*CONTACT LIST*/
 
 .contacts-card ul {
