@@ -44,7 +44,7 @@ a {
 
 main {
     padding: 3em;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -143,22 +143,22 @@ nav {
     border-radius: 1em;
 }
 
-.curriculum-side-wrapper {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: auto;
-}
-
 .curriculum-main-side-wrapper {
     display: grid;
     grid-gap: 1em;
+    /*grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));*/
     grid-template-columns: auto auto;
+}
+
+.curriculum-side-wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(17rem,1fr));
 }
 
 .curriculum-content {
     padding: 1em;
     border-right: 1px solid black;
-    /*max-width: 500px;*/
 }
 
 .curriculum-side-card {
@@ -202,6 +202,16 @@ nav {
     /*TODO when the green bar gets to the end, bring out a more detailed description*/
 }
 
+@media screen and (max-width: 900px){
+    .curriculum-main-side-wrapper {
+        grid-template-columns: auto;
+    }
+
+    .curriculum-content {
+        border-right: none;
+    }
+}
+
 /*CONTACT LIST*/
 
 .contacts-card ul {
@@ -213,6 +223,7 @@ nav {
     position: relative;
     display: table;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .contacts-card li::before {
