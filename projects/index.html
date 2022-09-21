@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" type = "text/css" href = "../css/style.css"/>
     <link rel="icon" href="../images/CATTT.png">
+    <script src="../js/main.js"></script>
 </head>
-<body>
+<body onload="checkTheme()">
     <nav class="shadow">
         <div class="inner-nav">
             <div class="nav-links">
@@ -18,42 +19,64 @@
                 <a href="../curriculum_vitae" class="nav-link">CV</a>
             </div>
         </div>
+        <div class="toggle-light">
+            <button onclick="switchTheme()">
+                <div class="light-div"></div>
+            </button>
+        </div>
     </nav>
     <main class="">
         <div class="project-cards-container">
             <div class="project-card shadow">
                 <h2>Gravity sim</h2>
+                <hr>
+                <div class="content-wrapper">
+                    <img src="../images/test_gif.gif" alt="Fantastic image">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Nunc consequat interdum varius sit amet. Magna fermentum iaculis eu non diam phasellus vestibulum. Duis ultricies lacus sed turpis tincidunt id aliquet. Vivamus at augue eget arcu dictum. Faucibus et molestie ac feugiat sed. Id leo in vitae turpis massa sed. Sapien pellentesque habitant morbi tristique.</p>
+                </div>
+                <div class="options-wrapper">
+                    <button class="shadow">Read more</button>
+                    <button class="shadow">Go to github</button>
+                </div>
             </div>
             <div class="project-card shadow">
-                <h2>Botanicni vrt</h2>
+                <h2>Botanični vrt</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Photos captions</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Gravity sim</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Urchin lights</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Personal website</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Submarine</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Competition manager</h2>
+                <hr>
             </div>
             <div class="project-card shadow">
                 <h2>Passwords</h2>
+                <hr>
             </div>
         </div>
     </main>
+    <div class="top-btn-container">
+        <a href="#" class="top-btn-link"><img src="../images/back_to_top.png" alt="" class="top-btn-img"/></a>
+    </div>
     <footer class="shadow">
-        <div class="top-btn-container">
-            <a href="#" class="top-btn-link"><img src="../images/back_to_top.png" alt="" class="top-btn-img"/></a>
-        </div>
         <p class="grid-col-span-4">You can also find me on:</p>
         <ul>
             <li>

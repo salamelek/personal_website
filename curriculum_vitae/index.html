@@ -10,7 +10,7 @@
     <link rel="icon" href="../images/CATTT.png">
     <script src="../js/main.js"></script>
 </head>
-<body>
+<body onload="checkTheme()">
     <nav class="shadow">
         <div class="inner-nav">
             <div class="nav-links">
@@ -18,6 +18,11 @@
                 <a href="../projects/" class="nav-link">PROJECTS</a>
                 <a href="" class="nav-link">CV</a>
             </div>
+        </div>
+        <div class="toggle-light">
+            <button onclick="switchTheme()">
+                <div class="light-div"></div>
+            </button>
         </div>
     </nav>
     <main>
@@ -35,15 +40,19 @@
                 <div class="curriculum-content">
                     <h3>Experience</h3>
                     <hr>
-                    <p>Lmao do you really expect me to have some experience?? Well anyway... project 1, 2, 3, 4, your mom and also dad. </p>
+                    <p>The only experience I have for now is the one that I got from making my programming projects. This includes mostly python, the HTML, CSS and JS package, basics of java, C and C++.I have also some experience in designing and creating a MYSQL database and connect to it through python or php connectors.</p>
                     <br>
                     <h3>Education</h3>
                     <hr>
-                    <p>I go to my school, mostly failing in learning maths... maybe I will finally begin to study this year :'D</p>
+                    <p>I go to "Znanstveni licej Simon Gregorčič" high school, a slovenian school in italy. As the name suggests, it all revolves around science, mathematics in particular. Personally I prefer computer science over any other subject, but we only learn it on a basic level.</p>
                     <br>
                     <h3>Hobbies</h3>
                     <hr>
-                    <p>Why tf am I putting hobbies in here</p>
+                    <p>I really love creating stuff from basic parts and then program it to do as I please. I mostly do that with arduino boards and other electronic components, but except for the building part, the best part about it is the programming.</p>
+                    <br>
+                    <h3>Disclaimer</h3>
+                    <hr>
+                    <p>To anyone reading this and dying of cringe:<br>Stfu, it's a work in progress :></p>
                 </div>
                 <div class="curriculum-side-wrapper">
                     <div class="skills-card curriculum-side-card shadow">
@@ -76,10 +85,10 @@
         </div>
         <div class="pdf-download-button"></div>
     </main>
+    <div class="top-btn-container">
+        <a href="#" class="top-btn-link"><img src="../images/back_to_top.png" alt="" class="top-btn-img"/></a>
+    </div>
     <footer class="shadow">
-        <div class="top-btn-container">
-            <a href="#" class="top-btn-link"><img src="../images/back_to_top.png" alt="" class="top-btn-img"/></a>
-        </div>
         <p class="grid-col-span-4">You can also find me on:</p>
         <div class="footer-wrapper">
             <ul>

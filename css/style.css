@@ -1,27 +1,33 @@
 /*debug stuff*/
 
 .border {
-    border: 1px solid black;
+    border: 1px solid red;
 }
 
 /*MAIN STUFF*/
 
 :root {
     /*color palette */
-    --text-color: rgb(28, 28, 28);
-    --button-color: rgb(0, 0, 0);
-    --link-color: rgb(110, 110, 110);
-    --dark-blue: rgb(0, 3, 49);
     --bcg-color: rgb(255, 255, 255);
-    --green: rgb(0, 255, 0);
+    --text-color: rgb(28, 28, 28);
+    --elements-color: rgb(0, 0, 0);
+    --link-color: rgb(110, 110, 110);
+    --shadow-color: rgb(0, 0, 0, 0.3);
+    --green: rgb(0, 121, 0);
     --orange: rgb(255, 128, 0);
-    --shadow-color: rgba(0, 0, 0, 0.3);
 
     /*transitions time*/
     --delay-short: 200ms;
     --delay-mid: 500ms;
     --delay-long: 1000ms;
 }
+
+:root[data-theme="dark"] {
+    --text-color: rgb(255, 255, 255);
+    --bcg-color: rgb(60, 63, 65);
+    --elements-color: rgb(255, 255, 255);
+}
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -37,8 +43,12 @@ p, h1, h2, h3 {
     color: var(--text-color);
 }
 
+hr {
+    border: 1px solid var(--elements-color)
+}
+
 a {
-    color: var(--button-color);
+    color: var(--elements-color);
     text-decoration: none;
 }
 
@@ -52,14 +62,12 @@ main {
     box-shadow: 0 0.22em 1em var(--shadow-color);
 }
 
-/*HEADER*/
-
-
 /*NAVIGATION*/
 
 nav {
     background: var(--bcg-color);
     padding: 3em;
+    position: relative;
 }
 
 .inner-nav {
@@ -77,6 +85,7 @@ nav {
     position: relative;
     margin: 0 0.5em;
     padding: 0.5em;
+    color: var(--text-color);
 }
 
 .nav-link::after {
@@ -105,6 +114,38 @@ nav {
     transition: font-size var(--delay-short);
 }
 
+/*LIGHT DARK MODE BUTTON*/
+.toggle-light button{
+    border-style: none;
+    position: absolute;
+    right: 2em;
+    bottom: 50%;
+    transform: translateY(50%);
+    background-image: url("../images/light_bulb.png");
+    background-repeat: round;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.toggle-light img {
+    width: 50px;
+    opacity: 0.3;
+}
+
+.light-div {
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    right: -12.5px;
+    bottom: -20.5px;
+    border-radius: 50%;
+}
+
+.light-div:hover {
+    background: radial-gradient(rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0) 50%);
+}
 /*INDEX CARDS*/
 
 .index-card {
@@ -120,12 +161,46 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
     align-items: start;
     gap: 2rem;
-    margin: 6rem calc(30% - 30vw);
+    margin: 0 calc(30% - 30vw) 6em;
 }
 
 .project-card {
     padding: 1em 2em;
     border-radius: 1em;
+}
+
+.content-wrapper {
+    text-align: justify;
+}
+
+
+.project-card img {
+    width: 100px;
+    height: 100%;
+    float: left;
+    margin: 0 1em;
+    border-radius: 0.4em;
+}
+
+.project-card .options-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project-card button {
+    border-style: none;
+    padding: 0.8em;
+    background: none;
+    border-radius: 0.6em;
+    transition: var(--delay-short);
+    color: var(--text-color);
+}
+
+.project-card button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: var(--delay-short);
+    color: var(--text-color);
 }
 
 /*CURRICULUM*/
@@ -165,12 +240,13 @@ nav {
 
 .curriculum-content {
     padding: 1em;
-    border-right: 1px solid black;
+    border-right: 1px solid var(--elements-color);
 }
 
 .curriculum-side-card {
     padding: 1em;
     border-radius: 1em;
+    color: var(--text-color);
 }
 
 /*SKILLS CARD*/
@@ -193,10 +269,10 @@ nav {
     position: absolute;
     pointer-events: none;
     border-radius: 0.5em;
-    bottom: 3px;
+    bottom: 5px;
     height: 3px;
-    width: 95%;
-    background: green;
+    width: 90%;
+    background: var(--green);
     left: 50%;
     transform: translateX(-50%) scaleX(0);
     transform-origin: left;
@@ -244,6 +320,10 @@ nav {
     margin-right: 0.5em;
 }
 
+.contacts-card li::before[data-theme="dark"] {
+    opacity: 0.6;
+}
+
 .li-gmail::before {
     background-image: url("../images/gmail_logo.png");
 }
@@ -287,6 +367,7 @@ nav {
 footer {
     padding: 2em;
     background-color: var(--bcg-color);
+    margin: auto auto 0;
 }
 
 footer p {
@@ -312,6 +393,7 @@ footer ul li {
 .cool-link {
     position: relative;
     transition: font-size var(--delay-mid);
+    color: var(--text-color);
 }
 
 .cool-link:hover, .cool-link:focus {
@@ -328,7 +410,7 @@ footer ul li {
             var(--orange)
     );
     white-space: nowrap;
-    padding: 1em 1.5em;
+    padding: 0.8em 1.2em;
     border-radius: 5px;
     top: 100%;
     right: 50%;
@@ -349,14 +431,17 @@ html {
 }
 
 .top-btn-container {
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     right: 2em;
+    bottom: 2em;
 }
 
 .top-btn-link {
     display: flex;
     border-radius: 50%;
     position: relative;
+    color: var(--text-color);
 }
 
 .top-btn-img {

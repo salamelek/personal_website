@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     <link rel="icon" href="./images/CATTT.png">
+    <script src="./js/main.js"></script>
 </head>
-<body>
+<body onload="checkTheme()">
     <nav class="shadow">
         <div class="inner-nav">
             <div class="nav-links">
@@ -17,6 +18,11 @@
                 <a href="./projects/" class="nav-link">PROJECTS</a>
                 <a href="curriculum_vitae" class="nav-link">CV</a>
             </div>
+        </div>
+        <div class="toggle-light">
+            <button onclick="switchTheme()">
+                <div class="light-div"></div>
+            </button>
         </div>
     </nav>
     <main class="">
@@ -51,10 +57,10 @@
             </section>
         </div>
     </main>
+    <div class="top-btn-container">
+        <a href="#" class="top-btn-link"><img src="./images/back_to_top.png" alt="" class="top-btn-img"/></a>
+    </div>
     <footer class="shadow">
-        <div class="top-btn-container">
-            <a href="#" class="top-btn-link"><img src="./images/back_to_top.png" alt="" class="top-btn-img"/></a>
-        </div>
         <p class="grid-col-span-4">You can also find me on:</p>
         <ul>
             <li>
