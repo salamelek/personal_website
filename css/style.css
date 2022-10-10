@@ -187,16 +187,17 @@ nav {
     justify-content: space-evenly;
 }
 
-.project-card button {
+.link-button {
     border-style: none;
     padding: 0.8em;
     background: none;
     border-radius: 0.6em;
+    cursor: pointer;
     transition: var(--delay-short);
     color: var(--text-color);
 }
 
-.project-card button:hover {
+.link-button:hover {
     background: rgba(0, 0, 0, 0.1);
     transform: scale(1.05);
     transition: var(--delay-short);
@@ -240,7 +241,7 @@ nav {
 
 .curriculum-content {
     padding: 1em;
-    border-right: 1px solid var(--elements-color);
+    border-right: 2px solid var(--elements-color);
 }
 
 .curriculum-side-card {
@@ -259,7 +260,6 @@ nav {
 }
 
 .skills-card:hover {
-    /*TODO hr is empty when zooming*/
     transform: scale(1.05);
     transition: transform var(--delay-mid);
 }
@@ -343,7 +343,7 @@ nav {
 .contacts-card li::after {
     content: "Click to copy";
     transform: scale(0) translateX(-50%);
-    background: gray;
+    background: var(--bcg-color);
     display: inline-block;
     position: absolute;
     left: 50%;
@@ -352,6 +352,7 @@ nav {
     padding: 0.5em;
     border-radius: 0.5em;
     pointer-events: none;
+    box-shadow: 0 0.22em 1em var(--shadow-color);
 
     transition: transform var(--delay-short);
     transform-origin: left bottom;
