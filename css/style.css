@@ -62,6 +62,16 @@ main {
     box-shadow: 0 0.22em 1em var(--shadow-color);
 }
 
+.zoom-on-hover {
+    transform: scale(1);
+    transition: var(--delay-short);
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.05);
+    transition: var(--delay-short);
+}
+
 /*NAVIGATION*/
 
 nav {
@@ -237,6 +247,7 @@ nav {
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(17rem,1fr));
+    margin-bottom: 1em;
 }
 
 .curriculum-content {
@@ -361,6 +372,18 @@ nav {
 .contacts-card li:hover::after {
     transform: scale(1) translateX(-50%);
     transform-origin: left bottom;
+}
+
+/*DOWNLOAD*/
+
+.pdf-download-button {
+    display: inline-block;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+}
+
+.pdf-download-button:hover {
+    cursor: pointer;
 }
 
 /*FOOTER*/
