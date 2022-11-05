@@ -10,7 +10,24 @@
     <link rel="icon" href="../images/CATTT.png">
     <script src="../js/main.js"></script>
 </head>
-<body onload="checkTheme()">
+<body>
+    <script>
+        if (window.localStorage.getItem("currentTheme") == null) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode
+                setTheme("dark")
+            } else {
+                // light mode
+                setTheme("light")
+            }
+        } else {
+            if (window.localStorage.getItem("currentTheme") === "dark") {
+                setTheme("dark")
+            } else {
+                setTheme("light")
+            }
+        }
+    </script>
     <nav class="shadow">
         <div class="inner-nav">
             <div class="nav-links">
@@ -49,10 +66,6 @@
                     <h3>Hobbies</h3>
                     <hr>
                     <p>I really love creating stuff from basic parts and then program it to do as I please. I mostly do that with arduino boards and other electronic components, but except for the building part, the best part about it is the programming.</p>
-                    <br>
-                    <h3>Disclaimer</h3>
-                    <hr>
-                    <p>To anyone reading this and dying of cringe:<br>Stfu, it's a work in progress :></p>
                 </div>
                 <div class="curriculum-side-wrapper">
                     <div class="skills-card curriculum-side-card shadow">

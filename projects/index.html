@@ -10,7 +10,24 @@
     <link rel="icon" href="../images/CATTT.png">
     <script src="../js/main.js"></script>
 </head>
-<body onload="checkTheme()">
+<body>
+    <script>
+        if (window.localStorage.getItem("currentTheme") == null) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode
+                setTheme("dark")
+            } else {
+                // light mode
+                setTheme("light")
+            }
+        } else {
+            if (window.localStorage.getItem("currentTheme") === "dark") {
+                setTheme("dark")
+            } else {
+                setTheme("light")
+            }
+        }
+    </script>
     <nav class="shadow">
         <div class="inner-nav">
             <div class="nav-links">

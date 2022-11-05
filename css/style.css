@@ -231,6 +231,10 @@ nav {
     justify-content: space-evenly;
 }
 
+.curriculum-header-title {
+    margin-left: 1em;
+}
+
 .curriculum-header-img img {
     width: 6em;
     border-radius: 1em;
@@ -410,6 +414,14 @@ footer ul {
 
 footer ul li {
     padding: 0 1em;
+}
+
+/*MOBILE*/
+
+@media (hover:none) {
+    main {
+        padding: 0 !important;
+    }
 }
 
 /*COOL LINK*/
