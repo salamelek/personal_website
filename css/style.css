@@ -416,14 +416,6 @@ footer ul li {
     padding: 0 1em;
 }
 
-/*MOBILE*/
-
-@media (hover:none) {
-    main {
-        padding: 0 !important;
-    }
-}
-
 /*COOL LINK*/
 
 .cool-link {
