@@ -53,7 +53,6 @@ a {
 }
 
 main {
-    padding: 3em;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -80,7 +79,13 @@ nav {
     position: relative;
 }
 
-.inner-nav {
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-nav-menu {
     display: flex;
     justify-content: center;
     height: 1em;
@@ -125,36 +130,42 @@ nav {
 }
 
 /*LIGHT DARK MODE BUTTON*/
-.toggle-light button{
-    border-style: none;
-    position: absolute;
-    right: 2em;
-    bottom: 50%;
-    transform: translateY(50%);
-    background-image: url("../images/light_bulb.png");
-    background-repeat: round;
+
+.toggle-light {
     width: 50px;
     height: 50px;
+    position: relative;
+    background-image: url("../images/light_bulb_off.png");
+    background-repeat: round;
     background-color: rgba(0, 0, 0, 0);
+    flex-shrink: 0;
 }
 
-.toggle-light img {
-    width: 50px;
-    opacity: 0.3;
+/*.toggle-light:hover {*/
+/*    background-image: url("../images/light_bulb_on.png");*/
+/*}*/
+
+.toggle-light button{
+    border-style: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .light-div {
-    cursor: pointer;
-    width: 75px;
-    height: 75px;
-    position: absolute;
-    right: -12.5px;
-    bottom: -20.5px;
     border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15%;
 }
 
-.light-div:hover {
-    background: radial-gradient(rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0) 50%);
+.toggle-light:hover .light-div {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0) 70%);
 }
 /*INDEX CARDS*/
 
@@ -218,7 +229,6 @@ nav {
 
 .curriculum-sheet {
     padding: 2em;
-    border-radius: 1em;
 }
 
 .curriculum-sheet li {
@@ -300,13 +310,23 @@ nav {
     /*TODO when the green bar gets to the end, bring out a more detailed description*/
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 60rem) {
     .curriculum-main-side-wrapper {
         grid-template-columns: auto;
     }
 
     .curriculum-content {
         border-right: none;
+    }
+}
+
+@media screen and (min-width: 40rem) {
+    main {
+        padding: 3em;
+    }
+
+    .curriculum-sheet {
+        border-radius: 1em;
     }
 }
 
