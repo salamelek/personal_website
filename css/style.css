@@ -53,8 +53,12 @@ a {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 60em;
     margin: 0 auto;
+}
+
+.main-wrapper {
+    padding: 2em;
 }
 
 .shadow {
@@ -71,6 +75,10 @@ main {
     transition: var(--delay-short);
 }
 
+.left-line {
+    border-left: 1px solid var(--text-color);
+}
+
 /*NAVIGATION*/
 
 nav {
@@ -82,13 +90,12 @@ nav {
 .nav-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .inner-nav-menu {
     display: flex;
     justify-content: center;
-    height: 1em;
+    min-height: 1em;
 }
 
 .nav-links {
@@ -134,16 +141,12 @@ nav {
 .toggle-light {
     width: 50px;
     height: 50px;
-    position: relative;
+    position: absolute;
     background-image: url("../images/light_bulb_off.png");
     background-repeat: round;
     background-color: rgba(0, 0, 0, 0);
-    flex-shrink: 0;
+    right: 1em;
 }
-
-/*.toggle-light:hover {*/
-/*    background-image: url("../images/light_bulb_on.png");*/
-/*}*/
 
 .toggle-light button{
     border-style: none;
@@ -172,7 +175,7 @@ nav {
 .index-card {
     padding: 1em 2em;
     border-radius: 1em;
-    margin: 1em;
+    margin: 1em 0;
 }
 
 /*PROJECT CARDS*/
@@ -310,26 +313,6 @@ nav {
     /*TODO when the green bar gets to the end, bring out a more detailed description*/
 }
 
-@media screen and (max-width: 60rem) {
-    .curriculum-main-side-wrapper {
-        grid-template-columns: auto;
-    }
-
-    .curriculum-content {
-        border-right: none;
-    }
-}
-
-@media screen and (min-width: 40rem) {
-    main {
-        padding: 3em;
-    }
-
-    .curriculum-sheet {
-        border-radius: 1em;
-    }
-}
-
 /*CONTACT LIST*/
 
 .contacts-card ul {
@@ -413,7 +396,7 @@ nav {
 /*FOOTER*/
 
 footer {
-    padding: 2em;
+    padding: 2em 2em 3em;
     background-color: var(--bcg-color);
     margin: auto auto 0;
 }
@@ -511,4 +494,30 @@ html {
 .top-btn-link:hover::before, .top-btn-link:focus-visible::before {
     transform: scale(1);
     pointer-events: none;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 40em) {
+    .nav-wrapper {
+        justify-content: center;
+    }
+
+    main {
+        padding: 3em;
+    }
+
+    .curriculum-sheet {
+        border-radius: 1em;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .curriculum-main-side-wrapper {
+        grid-template-columns: auto;
+    }
+
+    .curriculum-content {
+        border-right: none;
+    }
 }
