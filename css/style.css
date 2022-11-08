@@ -70,11 +70,6 @@ main {
     transition: var(--delay-short);
 }
 
-.zoom-on-hover:hover {
-    transform: scale(1.05);
-    transition: var(--delay-short);
-}
-
 .left-line {
     border-left: 1px solid var(--text-color);
 }
@@ -126,16 +121,6 @@ nav {
     transition: var(--delay-mid) ease;
 }
 
-.nav-link:hover::after, .nav-link:focus::after {
-    transform: scale(1);
-    transition: var(--delay-short) ease;
-}
-
-.nav-link:hover, .nav-link:focus {
-    font-size: 110%;
-    transition: font-size var(--delay-short);
-}
-
 /*LIGHT DARK MODE BUTTON*/
 
 .toggle-light {
@@ -165,11 +150,6 @@ nav {
     bottom: -15%;
 }
 
-.toggle-light:hover .light-div {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0) 70%);
-}
 /*INDEX CARDS*/
 
 .index-card {
@@ -217,13 +197,6 @@ nav {
     background: none;
     border-radius: 0.6em;
     cursor: pointer;
-    transition: var(--delay-short);
-    color: var(--text-color);
-}
-
-.link-button:hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
     transition: var(--delay-short);
     color: var(--text-color);
 }
@@ -287,11 +260,6 @@ nav {
     cursor: pointer;
 }
 
-.skills-card:hover {
-    transform: scale(1.05);
-    transition: transform var(--delay-mid);
-}
-
 .skills-card::after {
     content: "";
     position: absolute;
@@ -305,12 +273,6 @@ nav {
     transform: translateX(-50%) scaleX(0);
     transform-origin: left;
     transition-duration: var(--delay-short);
-}
-
-.skills-card:hover::after {
-    transform: translateX(-50%) scaleX(1);
-    transition: linear calc(var(--delay-long) * 2) var(--delay-long);
-    /*TODO when the green bar gets to the end, bring out a more detailed description*/
 }
 
 /*CONTACT LIST*/
@@ -376,21 +338,12 @@ nav {
     transform-origin: left bottom;
 }
 
-.contacts-card li:hover::after {
-    transform: scale(1) translateX(-50%);
-    transform-origin: left bottom;
-}
-
 /*DOWNLOAD*/
 
 .pdf-download-button {
     display: inline-block;
     padding: 1em 2em;
     border-radius: 0.5em;
-}
-
-.pdf-download-button:hover {
-    cursor: pointer;
 }
 
 /*FOOTER*/
@@ -427,17 +380,12 @@ footer ul li {
     color: var(--text-color);
 }
 
-.cool-link:hover, .cool-link:focus {
-    font-size: 110%;
-    transition: font-size var(--delay-short);
-}
-
 .cool-link::after {
     content: "Go to link";
     display: block;
     position: absolute;
     background: linear-gradient(
-            rgb(0 0 0 / 0),
+            rgba(0, 0, 0, 0),
             var(--orange)
     );
     white-space: nowrap;
@@ -449,11 +397,6 @@ footer ul li {
     transform: scale(0) translateX(50%);
     transition: transform var(--delay-mid) ease;
     transform-origin: top right;
-}
-
-.cool-link:hover::after, .cool-link:focus::after {
-    right: 50%;
-    transform: scale(1) translateX(50%);
 }
 
 /*BACK TO TOP*/
@@ -491,12 +434,72 @@ html {
     transform-origin: right;
 }
 
-.top-btn-link:hover::before, .top-btn-link:focus-visible::before {
-    transform: scale(1);
-    pointer-events: none;
-}
-
 /*MEDIA QUERIES*/
+
+@media screen and (hover) {
+    .nav-link:hover::after, .nav-link:focus::after {
+        transform: scale(1);
+        transition: var(--delay-short) ease;
+    }
+
+    .nav-link:hover, .nav-link:focus {
+        font-size: 110%;
+        transition: font-size var(--delay-short);
+    }
+
+    .toggle-light:hover .light-div {
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0) 70%);
+    }
+
+    .top-btn-link:hover::before, .top-btn-link:focus-visible::before {
+        transform: scale(1);
+        pointer-events: none;
+    }
+
+    .cool-link:hover::after, .cool-link:focus::after {
+        right: 50%;
+        transform: scale(1) translateX(50%);
+    }
+
+    .pdf-download-button:hover {
+        cursor: pointer;
+    }
+
+    .cool-link:hover, .cool-link:focus {
+        font-size: 110%;
+        transition: font-size var(--delay-short);
+    }
+
+    .link-button:hover {
+        background: rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+        transition: var(--delay-short);
+        color: var(--text-color);
+    }
+
+    .skills-card:hover {
+        transform: scale(1.05);
+        transition: transform var(--delay-mid);
+    }
+
+    .skills-card:hover::after {
+        transform: translateX(-50%) scaleX(1);
+        transition: linear calc(var(--delay-long) * 2) var(--delay-long);
+        /*TODO when the green bar gets to the end, bring out a more detailed description*/
+    }
+
+    .contacts-card li:hover::after {
+        transform: scale(1) translateX(-50%);
+        transform-origin: left bottom;
+    }
+
+    .zoom-on-hover:hover {
+        transform: scale(1.05);
+        transition: var(--delay-short);
+    }
+}
 
 @media screen and (min-width: 40em) {
     .nav-wrapper {
