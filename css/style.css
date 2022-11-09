@@ -4,6 +4,10 @@
     border: 1px solid red;
 }
 
+.work-in-progress {
+    text-align: center;
+}
+
 /*MAIN STUFF*/
 
 :root {
@@ -63,11 +67,6 @@ main {
 
 .shadow {
     box-shadow: 0 0.22em 1em var(--shadow-color);
-}
-
-.zoom-on-hover {
-    transform: scale(1);
-    transition: var(--delay-short);
 }
 
 .left-line {
@@ -148,6 +147,12 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     bottom: -15%;
+}
+
+/*HEADER*/
+
+header {
+
 }
 
 /*INDEX CARDS*/

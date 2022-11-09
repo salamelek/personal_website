@@ -14,10 +14,8 @@
     <script>
         if (window.localStorage.getItem("currentTheme") == null) {
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                // dark mode
                 setTheme("dark")
             } else {
-                // light mode
                 setTheme("light")
             }
         } else {
@@ -46,6 +44,9 @@
             </div>
         </div>
     </nav>
+    <div class="work-in-progress">
+        <h1>THIS PAGE IS STILL WORK IN PROGRESS</h1>
+    </div>
     <main>
         <div class="curriculum-sheet shadow">
             <div class="curriculum-header">
