@@ -262,7 +262,6 @@ header {
     transform: scale(1);
     transition: transform var(--delay-short);
     position: relative;
-    cursor: pointer;
 }
 
 .skills-card::after {
@@ -485,13 +484,14 @@ html {
     }
 
     .skills-card:hover {
-        transform: scale(1.05);
-        transition: transform var(--delay-mid);
+        /*transform: scale(1.05);*/
+        /*transition: transform var(--delay-mid);*/
+        /*cursor: pointer;*/
     }
 
     .skills-card:hover::after {
-        transform: translateX(-50%) scaleX(1);
-        transition: linear calc(var(--delay-long) * 2) var(--delay-long);
+        /*transform: translateX(-50%) scaleX(1);*/
+        /*transition: linear calc(var(--delay-long) * 2) var(--delay-long);*/
         /*TODO when the green bar gets to the end, bring out a more detailed description*/
     }
 
