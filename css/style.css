@@ -376,34 +376,23 @@ footer ul li {
     padding: 0 1em;
 }
 
-/*COOL LINK*/
-
-.cool-link {
+.footer-link {
     position: relative;
-    transition: font-size var(--delay-mid);
-    color: var(--text-color);
 }
 
-.cool-link::after {
-    content: "Go to link";
-    display: block;
+.footer-link::after {
+    content: "";
     position: absolute;
-    background: linear-gradient(
-            rgba(0, 0, 0, 0),
-            var(--orange)
-    );
-    white-space: nowrap;
-    padding: 0.8em 1.2em;
-    border-radius: 5px;
-    top: 100%;
-    right: 50%;
-    /*ANIMATIONS*/
-    transform: scale(0) translateX(50%);
-    transition: transform var(--delay-mid) ease;
-    transform-origin: top right;
+    background: var(--text-color);
+
+    height: 3px;
+    width: 100%;
+    bottom: -5px;
+    transform: translateX(-100%) scale(0);
 }
 
 /*BACK TO TOP*/
+
 html {
     scroll-behavior: smooth;
 }
@@ -462,18 +451,8 @@ html {
         pointer-events: none;
     }
 
-    .cool-link:hover::after, .cool-link:focus::after {
-        right: 50%;
-        transform: scale(1) translateX(50%);
-    }
-
     .pdf-download-button:hover {
         cursor: pointer;
-    }
-
-    .cool-link:hover, .cool-link:focus {
-        font-size: 110%;
-        transition: font-size var(--delay-short);
     }
 
     .link-button:hover {
@@ -502,6 +481,16 @@ html {
 
     .zoom-on-hover:hover {
         transform: scale(1.05);
+        transition: var(--delay-short);
+    }
+
+    .footer-link:hover {
+        transform: scale(1.05);
+        transition: var(--delay-short);
+    }
+
+    .footer-link:hover::after {
+        transform: translateX(-100%) scale(1);
         transition: var(--delay-short);
     }
 }
