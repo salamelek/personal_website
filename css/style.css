@@ -152,7 +152,14 @@ nav {
 /*HEADER*/
 
 header {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: auto auto;
+    border-radius: 1em;
+}
 
+header img {
+    border-radius: 1em;
 }
 
 /*INDEX CARDS*/
@@ -365,11 +372,10 @@ footer p {
 
 footer ul {
     list-style: none;
-    display: flex;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
-    height: 1em;
-    padding-bottom: 3em;
-    padding-left: 0;
 }
 
 footer ul li {
@@ -384,7 +390,6 @@ footer ul li {
     content: "";
     position: absolute;
     background: var(--text-color);
-
     height: 3px;
     width: 100%;
     bottom: -5px;
@@ -459,7 +464,6 @@ html {
         background: rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
         transition: var(--delay-short);
-        color: var(--text-color);
     }
 
     .skills-card:hover {
@@ -485,13 +489,19 @@ html {
     }
 
     .footer-link:hover {
-        transform: scale(1.05);
+        ;
         transition: var(--delay-short);
     }
 
     .footer-link:hover::after {
         transform: translateX(-100%) scale(1);
         transition: var(--delay-short);
+    }
+}
+
+@media screen and (min-width: 30em) {
+    footer ul {
+        grid-auto-flow: column;
     }
 }
 
