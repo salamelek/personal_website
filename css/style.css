@@ -300,31 +300,43 @@ header img {
     white-space: nowrap;
 }
 
-.contacts-card li::before {
-    content: '';
+.contacts-card li::before, footer li::before {
+    content: "";
     display: inline-block;
     height: 1em;
     width: 1em;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: bottom right;
     margin-right: 0.5em;
 }
 
-.contacts-card li::before[data-theme="dark"] {
+.contacts-card li::before[data-theme="dark"], footer li::before[data-theme="dark"] {
     opacity: 0.6;
 }
 
-.li-gmail::before {
+.gmail-logo::before {
     background-image: url("../images/gmail_logo.png");
 }
 
-.li-phone::before {
+.phone-logo::before {
     background-image: url("../images/mobile-phone.png");
 }
 
-.li-instagram::before {
+.instagram-logo::before {
     background-image: url("../images/instagram_logo.png");
+}
+
+.github-logo::before {
+    background-image: url("../images/github_logo.png");
+}
+
+.youtube-logo::before {
+    background-image: url("../images/youtube_logo.png")
+}
+
+.discord-logo::before {
+    background-image: url("../images/discord_logo.png")
 }
 
 .copied::after {
@@ -379,7 +391,8 @@ footer ul {
 }
 
 footer ul li {
-    padding: 0 1em;
+    padding: 0 1em 1em;
+    margin: 0 auto;
 }
 
 .footer-link {
@@ -394,6 +407,8 @@ footer ul li {
     width: 100%;
     bottom: -5px;
     transform: translateX(-100%) scale(0);
+    transition: var(--delay-mid);
+    border-radius: 5px;
 }
 
 /*BACK TO TOP*/
@@ -466,18 +481,6 @@ html {
         transition: var(--delay-short);
     }
 
-    .skills-card:hover {
-        /*transform: scale(1.05);*/
-        /*transition: transform var(--delay-mid);*/
-        /*cursor: pointer;*/
-    }
-
-    .skills-card:hover::after {
-        /*transform: translateX(-50%) scaleX(1);*/
-        /*transition: linear calc(var(--delay-long) * 2) var(--delay-long);*/
-        /*TODO when the green bar gets to the end, bring out a more detailed description*/
-    }
-
     .contacts-card li:hover::after {
         transform: scale(1) translateX(-50%);
         transform-origin: left bottom;
@@ -489,7 +492,7 @@ html {
     }
 
     .footer-link:hover {
-        ;
+        font-size: 105%;
         transition: var(--delay-short);
     }
 
