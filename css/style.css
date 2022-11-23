@@ -73,6 +73,10 @@ main {
     border-left: 1px solid var(--text-color);
 }
 
+.icon {
+    display: inline-block;
+}
+
 /*NAVIGATION*/
 
 nav {
@@ -300,14 +304,14 @@ header img {
     white-space: nowrap;
 }
 
-.contacts-card li::before, .footer-link::before {
+.contacts-card div::before, .footer-link::before {
     content: "";
     display: inline-block;
-    height: 1em;
+    height: 100%;
     width: 1em;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom right;
+    vertical-align: middle;
     margin-right: 0.5em;
 }
 
@@ -502,12 +506,6 @@ html {
     }
 }
 
-@media screen and (min-width: 30em) {
-    footer ul {
-        grid-auto-flow: column;
-    }
-}
-
 @media screen and (min-width: 40em) {
     .nav-wrapper {
         justify-content: center;
@@ -519,6 +517,10 @@ html {
 
     .curriculum-sheet {
         border-radius: 1em;
+    }
+
+    footer ul {
+        grid-auto-flow: column;
     }
 }
 
