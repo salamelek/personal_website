@@ -300,7 +300,7 @@ header img {
     white-space: nowrap;
 }
 
-.contacts-card li::before, footer li::before {
+.contacts-card li::before, .footer-link::before {
     content: "";
     display: inline-block;
     height: 1em;
