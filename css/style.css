@@ -321,7 +321,6 @@ header img {
     margin-right: 0.5em;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center right;
 }
 
 .icon::before[data-theme="dark"] {
