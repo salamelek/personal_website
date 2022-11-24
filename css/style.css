@@ -178,7 +178,7 @@ header img {
 
 .project-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
     align-items: start;
     gap: 2rem;
     margin: 0 calc(30% - 30vw) 6em;
