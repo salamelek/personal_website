@@ -304,43 +304,48 @@ header img {
     white-space: nowrap;
 }
 
-.contacts-card div::before, .footer-link::before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 1em;
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
+/*ICON*/
+
+.icon {
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.icon::before {
+    height: 1.2em;
+    width: 1.2em;
+    display: flex;
     margin-right: 0.5em;
 }
 
-.contacts-card li::before[data-theme="dark"], footer li::before[data-theme="dark"] {
+.icon::before[data-theme="dark"] {
     opacity: 0.6;
 }
 
 .gmail-logo::before {
-    background-image: url("../images/gmail_logo.png");
+    content: url("../images/gmail_logo.png");
 }
 
 .phone-logo::before {
-    background-image: url("../images/mobile-phone.png");
+    content: url("../images/mobile-phone.png");
 }
 
 .instagram-logo::before {
-    background-image: url("../images/instagram_logo.png");
+    content: url("../images/instagram_logo.png");
 }
 
 .github-logo::before {
-    background-image: url("../images/github_logo.png");
+    content: url("../images/github_logo.png");
 }
 
 .youtube-logo::before {
-    background-image: url("../images/youtube_logo.png")
+    content: url("../images/youtube_logo.png")
 }
 
 .discord-logo::before {
-    background-image: url("../images/discord_logo.png")
+    content: url("../images/discord_logo.png")
 }
 
 .copied::after {
@@ -410,7 +415,7 @@ footer ul li {
     height: 3px;
     width: 100%;
     bottom: -5px;
-    transform: translateX(-100%) scale(0);
+    transform: scale(0);
     transition: var(--delay-mid);
     border-radius: 5px;
 }
@@ -501,7 +506,7 @@ html {
     }
 
     .footer-link:hover::after {
-        transform: translateX(-100%) scale(1);
+        transform: scale(1);
         transition: var(--delay-short);
     }
 }
