@@ -314,10 +314,14 @@ header img {
 }
 
 .icon::before {
+    content: "";
     height: 1.2em;
     width: 1.2em;
-    display: flex;
+    display: inline-block;
     margin-right: 0.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
 .icon::before[data-theme="dark"] {
@@ -325,27 +329,27 @@ header img {
 }
 
 .gmail-logo::before {
-    content: url("../images/gmail_logo.png");
+    background-image: url("../images/gmail_logo.png");
 }
 
 .phone-logo::before {
-    content: url("../images/mobile-phone.png");
+    background-image: url("../images/mobile-phone.png");
 }
 
 .instagram-logo::before {
-    content: url("../images/instagram_logo.png");
+    background-image: url("../images/instagram_logo.png");
 }
 
 .github-logo::before {
-    content: url("../images/github_logo.png");
+    background-image: url("../images/github_logo.png");
 }
 
 .youtube-logo::before {
-    content: url("../images/youtube_logo.png")
+    background-image: url("../images/youtube_logo.png")
 }
 
 .discord-logo::before {
-    content: url("../images/discord_logo.png")
+    background-image: url("../images/discord_logo.png")
 }
 
 .copied::after {
@@ -402,10 +406,6 @@ footer ul {
 footer ul li {
     padding: 0 1em 1em;
     margin: 0 auto;
-}
-
-.footer-link {
-    position: relative;
 }
 
 .footer-link::after {
