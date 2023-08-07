@@ -1,5 +1,5 @@
 function copyText(e) {
-    let contact = document.getElementById(e.id).parentElement;
+    let contact = document.getElementById(e.id);
 
     navigator.clipboard.writeText(contact.innerText);
 
@@ -7,7 +7,7 @@ function copyText(e) {
 }
 
 function resetTooltip(e) {
-    let contact = document.getElementById(e.id).parentElement;
+    let contact = document.getElementById(e.id);
     contact.classList.remove("copied")
 }
 
