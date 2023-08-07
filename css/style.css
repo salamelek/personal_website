@@ -351,13 +351,13 @@ header img {
     background-image: url("../images/discord_logo.png")
 }
 
-.copied::after {
-    content: "Copied!" !important;
+.contacts-card li.copied::after {
+    content: "Copied!";
 }
 
 .contacts-card li::after {
     content: "Click to copy";
-    transform: scale(0) translateX(-50%);
+    transform: scale(0) translateX(-50%) translateY(5%);
     background: var(--bcg-color);
     display: inline-block;
     position: absolute;
