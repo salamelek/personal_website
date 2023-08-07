@@ -324,6 +324,7 @@ header img {
 }
 
 .icon::before[data-theme="dark"] {
+    /*doesnt seem to work*/
     opacity: 0.6;
 }
 
@@ -351,8 +352,22 @@ header img {
     background-image: url("../images/discord_logo.png")
 }
 
+.copy-icon::before {
+    background-image: url("../images/copy_icon_light.png");
+}
+
+.copy-icon::before[data-theme="dark"] {
+    background-image: url("../images/copy_icon_dark.png");
+}
+
 .contacts-card li.copied::after {
     content: "Copied!";
+}
+
+.title-and-copy-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .contacts-card li::after {
