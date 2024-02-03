@@ -1,14 +1,11 @@
-function copyText(e) {
-    let contact = document.getElementById(e.id);
-
-    navigator.clipboard.writeText(contact.innerText);
-
-    contact.classList.add("copied")
+function copyText(element, text) {
+    let trimmedText = text.split('\n').map(line => line.trim()).join('\n').trim();
+    navigator.clipboard.writeText(trimmedText);
+    element.classList.add("copied")
 }
 
-function resetTooltip(e) {
-    let contact = document.getElementById(e.id);
-    contact.classList.remove("copied")
+function resetTooltip(element) {
+    element.classList.remove("copied")
 }
 
 function setTheme(theme) {

@@ -300,7 +300,6 @@ header img {
     list-style: none;
     position: relative;
     display: table;
-    cursor: pointer;
     white-space: nowrap;
 }
 
@@ -308,7 +307,6 @@ header img {
 
 .icon {
     position: relative;
-    cursor: pointer;
     display: grid;
     grid-template-columns: auto auto;
 }
@@ -360,17 +358,20 @@ header img {
     background-image: url("../images/copy_icon_dark.png");
 }
 
-.contacts-card li.copied::after {
-    content: "Copied!";
-}
-
 .title-and-copy-holder {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.contacts-card li::after {
+/*COPY STUFF*/
+
+.copy-element {
+    cursor: pointer;
+}
+
+.copy-element::after {
+    /*FIXME sometimes this doesnt pop up (idk why)*/
     content: "Click to copy";
     transform: scale(0) translateX(-50%) translateY(5%);
     background: var(--bcg-color);
@@ -386,6 +387,14 @@ header img {
 
     transition: transform var(--delay-short);
     transform-origin: left bottom;
+}
+
+.copy-element.copied::after {
+    content: "Copied!";
+}
+
+.invisible-text {
+    display: none;
 }
 
 /*DOWNLOAD*/
@@ -504,8 +513,8 @@ html {
         transition: var(--delay-short);
     }
 
-    .contacts-card li:hover::after {
-        transform: scale(1) translateX(-50%);
+    .copy-element:hover::after {
+        transform: scale(1) translateX(-50%) translateY(-5px);
         transform-origin: left bottom;
     }
 

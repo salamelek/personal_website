@@ -83,25 +83,32 @@
                             <li>I get up</li>
                         </ul>
                     </div>
+
                     <div class="contacts-card curriculum-side-card shadow">
                         <div class="title-and-copy-holder">
                             <h3>Contacts</h3>
-                            <div class="icon copy-icon"></div>
+                            <div class="icon copy-icon copy-element" onclick="copyText(this, this.firstElementChild.innerText)" onmouseout="resetTooltip(this)">
+                                <pre class="invisible-text">
+                                    E-mail:     samuel.sluga@gmail.com
+                                    Phone:      +386 70 588 860
+                                    Instagram:  @_salamelek_
+                                </pre>
+                            </div>
                         </div>
-<!--                        TODO: place a copy contacts button next to the title of the card and set the individual contact to "take me to that page"-->
                         <hr>
                         <ul>
-                            <li onclick="copyText(this)" onmouseout="resetTooltip(this)" id="li-gmail">
+                            <li>
                                 <div class="icon gmail-logo">samuel.sluga@gmail.com</div>
                             </li>
-                            <li onclick="copyText(this)" onmouseout="resetTooltip(this)" id="li-phone">
+                            <li>
                                 <div class="icon phone-logo">+386 70 588 860</div>
                             </li>
-                            <li onclick="copyText(this)" onmouseout="resetTooltip(this)" id="li-instagram">
+                            <li>
                                 <div class="icon instagram-logo">@_salamelek_</div>
                             </li>
                         </ul>
                     </div>
+
                     <div class="curriculum-side-card shadow">
                         <h3>References</h3>
                         <hr>
@@ -111,14 +118,19 @@
                     </div>
                 </div>
             </div>
-            <div class="pdf-download-button shadow zoom-on-hover" title="Download the pdf version of the curriculum">
-                <a href="./Samuel_Sluga_CV.pdf" download="Samuel_Sluga_CV.pdf">Download pdf</a>
-            </div>
+
+            <a class="pdf-download-button shadow zoom-on-hover"
+               title="Download the pdf version of the curriculum"
+               href="./Samuel_Sluga_CV.pdf" download="Samuel_Sluga_CV.pdf">
+                Download pdf
+            </a>
         </div>
     </main>
+
     <div class="top-btn-container">
         <a href="#" class="top-btn-link"><img src="../images/back_to_top.png" alt="" class="top-btn-img"/></a>
     </div>
+
     <footer class="shadow">
         <p class="grid-col-span-4">You can also find me on:</p>
         <div class="footer-wrapper">
