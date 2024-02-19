@@ -318,6 +318,11 @@ header img {
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-right: 0.5em;
+}
+
+.icon-nomargin::before {
+    margin-right: 0;
 }
 
 .icon::before[data-theme="dark"] {
