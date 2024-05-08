@@ -43,8 +43,12 @@ body {
     margin: 0 auto;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, li, ul {
     color: var(--text-color);
+}
+
+p {
+    line-height: 1.3;
 }
 
 hr {
@@ -56,13 +60,17 @@ a {
     text-decoration: none;
 }
 
+.visible-link {
+    text-decoration: underline;
+}
+
 main {
     max-width: 60em;
     margin: 0 auto;
 }
 
 .main-wrapper {
-    padding: 2em;
+    padding: 2em 0 2em 0;
 }
 
 .shadow {
@@ -98,6 +106,7 @@ nav {
 
 .nav-links {
     text-transform: uppercase;
+    display: flex;
 }
 
 .nav-link {
@@ -124,7 +133,7 @@ nav {
     transition: var(--delay-mid) ease;
 }
 
-/*LIGHT DARK MODE BUTTON*/
+/*LIGHT-DARK MODE BUTTON*/
 
 .toggle-light {
     width: 50px;
@@ -156,22 +165,23 @@ nav {
 /*HEADER*/
 
 header {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: auto auto;
-    border-radius: 1em;
+    display: flex;
+    gap: 1em;
 }
 
 header img {
     border-radius: 1em;
+    width: 35%;
+    min-height: 50%;
 }
 
 /*INDEX CARDS*/
 
 .index-card {
     padding: 1em 2em;
-    border-radius: 1em;
-    margin: 1em 0;
+    margin: 0 0 1em 0;
+    align-items: center;
+    justify-items: center;
 }
 
 /*PROJECT CARDS*/
@@ -186,7 +196,10 @@ header img {
 
 .project-card {
     padding: 1em 2em;
-    border-radius: 1em;
+}
+
+.project-card:focus {
+    border: 2px solid red;
 }
 
 .content-wrapper {
@@ -375,7 +388,6 @@ header img {
 }
 
 .copy-element::after {
-    /*FIXME sometimes this doesnt pop up (idk why)*/
     content: "Click to copy";
     transform: scale(0) translateX(-50%) translateY(5%);
     background: var(--bcg-color);
@@ -403,13 +415,18 @@ header img {
 
 /*POSITIVE CLICK*/
 
-.animation-div {
+.animation-div-positive {
+    /*
+    In the future this should be a click animation like green sparkles
+    */
+
     position: absolute;
     width: 25px;
     height: 25px;
-    background: red;
+    background: green;
     top: 0;
     border-radius: 50%;
+    pointer-events: none;
 
     transform: scale(0);
 }
@@ -551,6 +568,7 @@ html {
     }
 }
 
+/*screen bigger than 40em*/
 @media screen and (min-width: 40em) {
     .nav-wrapper {
         justify-content: center;
@@ -560,7 +578,10 @@ html {
         padding: 3em;
     }
 
-    .curriculum-sheet {
+    .curriculum-sheet,
+    .project-card,
+    .index-card,
+    header {
         border-radius: 1em;
     }
 
@@ -569,6 +590,7 @@ html {
     }
 }
 
+/*screen less than 60rem*/
 @media screen and (max-width: 60rem) {
     .curriculum-main-side-wrapper {
         grid-template-columns: auto;
@@ -579,6 +601,22 @@ html {
     }
 }
 
+/*screen less than 25rem*/
+@media screen and (max-width: 25rem) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header img {
+        width: 75%;
+    }
+}
+
 /*for devices that do not support hover*/
 @media not all and (hover) {
+
 }
