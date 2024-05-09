@@ -60,12 +60,28 @@ function getPositionRelativeToPage(element) {
 function showMore(btn) {
     let projectCard = btn.parentNode.parentNode;
     let readMoreDiv = projectCard.querySelector(".show-more");
+    let blurBcg = document.getElementById("blur-bcg");
 
     if (readMoreDiv.classList.contains("hidden")) {
+        // expand reading section
         readMoreDiv.classList.remove("hidden");
         btn.text = "Show less";
+        projectCard.classList.add("expanded");
+
+        blurBcg.classList.remove("behind");
+
+        // add event listener for better user experience
+        blurBcg.addEventListener("click", () => {
+            retract();
+        })
     } else {
+        retract();
+    }
+
+    function retract() {
         readMoreDiv.classList.add("hidden");
         btn.text = "Show more";
+        projectCard.classList.remove("expanded");
+        blurBcg.classList.add("behind");
     }
 }

@@ -99,6 +99,7 @@ nav {
     background: var(--bcg-color);
     padding: 1em;
     position: relative;
+    z-index: 1;
 }
 
 .nav-wrapper {
@@ -207,10 +208,7 @@ header img {
 
 .project-card {
     padding: 1em 2em;
-}
-
-.project-card:focus {
-    border: 2px solid red;
+    background: var(--bcg-color);
 }
 
 .content-wrapper {
@@ -249,6 +247,26 @@ header img {
 
 .show-more {
 
+}
+
+.expanded {
+    position: absolute;
+    max-width: 60em;
+    justify-self: center;
+    z-index: 1;
+}
+
+.blur-bcg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+}
+
+.behind {
+    z-index: -1;
 }
 
 /*CURRICULUM*/
@@ -466,6 +484,8 @@ footer {
     padding: 2em 2em 3em;
     background-color: var(--bcg-color);
     margin: auto auto 0;
+    position: relative;
+    z-index: 1;
 }
 
 footer p {
@@ -509,6 +529,7 @@ html {
     position: fixed;
     right: 2em;
     bottom: 2em;
+    z-index: 2;
 }
 
 .top-btn-link {
@@ -602,6 +623,10 @@ html {
 
     main {
         padding: 3em;
+    }
+
+    .expanded {
+        margin: 0 1em;
     }
 
     .curriculum-sheet,

@@ -6,9 +6,9 @@
     <meta name="description" content="Salamelek's personal website">
     <meta name="author" content="salamelek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type = "text/css" href = "../css/style.css?v=1.1"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/style.css?v=1.2"/>
     <link rel="icon" href="../images/CATTT.png">
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js?v=1.2"></script>
 </head>
 <body>
     <script>
@@ -44,9 +44,11 @@
             </div>
         </div>
     </nav>
+
     <div class="work-in-progress">
         <h1>THIS PAGE IS STILL WORK IN PROGRESS</h1>
     </div>
+
     <main class="">
         <div class="project-cards-container">
 
@@ -87,6 +89,15 @@
                             the "include" command.<br>
                             It was a much better alternative than v1, but it never really worked properly. That's why I
                             started working on v3, but never actually finished it.
+                        </p>
+                        <p>
+                            The big thing about v3 is that it has its own MySQL database, and it all works with php on
+                            my server. I wanted to make it in such a way that even when i+ll be gone from the school the
+                            teachers could update any plant entries without messing around with weird JSON files. This
+                            is why I created from scratch a whole system of users that can edit, add and delete plant
+                            entries. I didn't use any frameworks, so I'm pretty sure that with some simple SQL injection
+                            attacks the whole database would be gone, but my hope is that no one cares that much about a
+                            random plant site.
                         </p>
                     </div>
                 </div>
@@ -168,5 +179,7 @@
             </li>
         </ul>
     </footer>
+
+    <div class="blur-bcg behind" id="blur-bcg"></div>
 </body>
 </html>
