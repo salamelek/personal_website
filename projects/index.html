@@ -45,9 +45,12 @@
         </div>
     </nav>
 
+    <!-- not anymore I hope -->
+    <!--
     <div class="work-in-progress">
         <h1>THIS PAGE IS STILL WORK IN PROGRESS</h1>
     </div>
+    -->
 
     <main class="">
         <div class="project-cards-container">
@@ -88,7 +91,15 @@
                             script for a js one. I was also sick of copy-pasting everything, so I tried to use php just to use
                             the "include" command.<br>
                             It was a much better alternative than v1, but it never really worked properly. That's why I
-                            started working on v3, but never actually finished it.
+                            started working on v3, but never actually finished it.<br>
+                            <a
+                                href="https://salamelek.rikis.net/testpage/botanicni_vrt2/"
+                                class="visible-link"
+                            >[V2 website]</a>,
+                            <a
+                                    href="https://github.com/salamelek/botanicni_vrt_2/"
+                                    class="visible-link"
+                            >[V2 GitHub]</a>
                         </p>
                         <p>
                             The big thing about v3 is that it has its own MySQL database, and it all works with php on
@@ -97,52 +108,146 @@
                             is why I created from scratch a whole system of users that can edit, add and delete plant
                             entries. I didn't use any frameworks, so I'm pretty sure that with some simple SQL injection
                             attacks the whole database would be gone, but my hope is that no one cares that much about a
-                            random plant site.
+                            random plant site.<br>
+                            <a
+                                    href="https://salamelek.rikis.net/testpage/botanicni3/"
+                                    class="visible-link"
+                            >[V3 website]</a>,
+                            <a
+                                    href="https://github.com/salamelek/botanicni_3/"
+                                    class="visible-link"
+                            >[V3 GitHub]</a>
                         </p>
                     </div>
                 </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" onclick="showMore(this)">Show more</a>
-                    <a class="shadow link-button" href="https://salamelek.rikis.net/botanicni_vrt/">Go to website</a>
+                    <a class="shadow link-button" href="#botanicni-vrt-1" onclick="showMore(this)">Show more</a>
+                    <a class="shadow link-button" href="https://salamelek.rikis.net/botanicni_vrt/">V1 website</a>
                 </div>
             </div>
 
-            <div class="project-card shadow">
+            <div class="project-card shadow" id="passwords">
                 <h2>Passwords</h2>
                 <hr>
-                <div class="content-wrapper"></div>
+                <div class="content-wrapper">
+                    <div class="preview">
+                        <p>
+                            A password manager that uses hashing to generate a different password for each key pair.
+                        </p>
+                    </div>
+                    <div class="show-more hidden">
+                        <p>
+                            I never actually used this, but it was a fun project.
+                            It uses a pair of secret and public key to generate the password for any account. The secret
+                            key is the keyring password, while the public key is the name of the application of the account.
+                            The program spews out a different password for every key pair with the help of hashing.
+                        </p>
+                        <p>
+                            While the Python version worked fine, it was very inconvenient to use. That's why I made a
+                            <a href="https://salamelek.rikis.net/password" class="visible-link">web version</a> and
+                            later also the browser plugin version (I didn't bother putting it on the web store though).
+                        </p>
+                    </div>
+                </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" href="">Show more</a>
+                    <a class="shadow link-button" href="#passwords" onclick="showMore(this)">Show more</a>
                     <a class="shadow link-button" href="">Go to github</a>
                 </div>
             </div>
 
-            <div class="project-card shadow">
+            <div class="project-card shadow" id="urchin-lights">
                 <h2>Urchin lights</h2>
                 <hr>
-                <div class="content-wrapper"></div>
+                <div class="content-wrapper">
+                    <div class="preview">
+                        <p>
+                            One day I discovered that urchin shells are semi-transparent to light especially when wet.
+                            From there I ordered som LED-lights, lipo batteries and some charging modules and threw all
+                            together in a carved out rock to make an awesome mini lamp.
+                        </p>
+                    </div>
+                    <div class="show-more hidden">
+                        <p>
+                            Since there is not much explaining to do, here are some pictures:
+                        </p>
+
+                        <p>
+                            Actually I still have to take and upload the pictures, so have a smiley face instead :D
+                        </p>
+                    </div>
+                </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" href="">Show more</a>
-                    <a class="shadow link-button" href="">Go to github</a>
+                    <a class="shadow link-button" href="#urchin-lights" onclick="showMore(this)">Show pics</a>
                 </div>
             </div>
 
             <div class="project-card shadow" id="submarine">
                 <h2>Submarine</h2>
                 <hr>
-                <div class="content-wrapper"></div>
+                <div class="content-wrapper">
+                    <div class="preview">
+                        <p>
+                            My dream of creating an RC submarine from scratch with an arduino, some motors and lots of
+                            luck.
+                        </p>
+                    </div>
+                    <div class="show-more hidden">
+                        <p>
+                            The plan is to have a submarine controlled from my pc on land via an RF24 module for
+                            arduino. I made a Python script that captures keyboard or joystick events and sends them
+                            to an arduino nano via USB that in turn transmits via RF24 to the submarine antenna, where
+                            a second arduino translates the packets and controls the submarine.
+                        </p>
+                        <p>
+                            Like any other RC submarine, I can't just rely on wireless communication, since 2.4GhZ waves
+                            barely penetrate water. My plan is to tether the sub to a floating antenna that will get all
+                            the signals, while allowing the submarine all the wanted mobility.
+                        </p>
+                        <p>
+                            Besides the basic movement functions I also want to add an FPV camera, so I can see live
+                            where it's going on my computer screen.
+                        </p>
+                        <p>
+                            For now the project is stuck on the ballast design, but I think that eventually it will be
+                            done.
+                        </p>
+                    </div>
+                </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" href="">Show more</a>
-                    <a class="shadow link-button" href="">Go to github</a>
+                    <a class="shadow link-button" href="#submarine" onclick="showMore(this)">Show more</a>
+                    <a class="shadow link-button" href="https://github.com/salamelek/submarine">Go to github</a>
                 </div>
             </div>
 
-            <div class="project-card shadow">
+            <div class="project-card shadow" id="trading-bot">
                 <h2>Trading bot</h2>
                 <hr>
-                <div class="content-wrapper"></div>
+                <div class="content-wrapper">
+                    <div class="preview">
+                        <p>
+                            My most recent "mega-project". Will I be able to consistently predict crypto prices? Will I
+                            reach financial freedom? <i>(probably not, but at least I'm learning new stuff)</i>
+                        </p>
+                    </div>
+                    <div class="show-more hidden">
+                        <p>
+                            It all started back in 2018, when I made a rudimentary Python script that connected to a
+                            broker's API and bought and sold crypto based on a questionable strategy found online in
+                            about 5 minutes. As expected, it did not perform well.
+                        </p>
+                        <p>
+                            After some time I revisited the idea, but this time I wanted to implement it using AI. So
+                            like any good programmer would do (sarcasm), I just jumped into programming without even
+                            planning. I tried deep q-learning and KNN too, but soon I realised that it was a bit more
+                            complicated than I thought.
+                        </p>
+                        <p>
+                            At this point the repo was (and still is) a total mess.
+                        </p>
+                    </div>
+                </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" href="">Show more</a>
+                    <a class="shadow link-button" href="#trading-bot" onclick="showMore(this)">Show more</a>
                     <a class="shadow link-button" href="">Go to github</a>
                 </div>
             </div>
@@ -150,9 +255,16 @@
             <div class="project-card shadow">
                 <h2>Gravity sim</h2>
                 <hr>
-                <div class="content-wrapper"></div>
+                <div class="content-wrapper">
+                    <div class="preview">
+
+                    </div>
+                    <div class="show-more hidden">
+
+                    </div>
+                </div>
                 <div class="options-wrapper">
-                    <a class="shadow link-button" href="">Show more</a>
+                    <a class="shadow link-button" onclick="showMore(this)">Show more</a>
                     <a class="shadow link-button" href="">Go to github</a>
                 </div>
             </div>
