@@ -4,14 +4,17 @@ function copyText(element, text) {
     element.classList.add("copied")
 }
 
+
 function resetTooltip(element) {
     element.classList.remove("copied")
 }
+
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem("currentTheme", theme);
 }
+
 
 function switchTheme() {
     if (window.localStorage.getItem("currentTheme") !== "dark") {
@@ -20,6 +23,7 @@ function switchTheme() {
         setTheme("light")
     }
 }
+
 
 function positiveClick(element, duration=500) {
     const animationElement = document.getElementById("animation-div");
@@ -40,6 +44,7 @@ function positiveClick(element, duration=500) {
     }, duration);
 }
 
+
 function getPositionRelativeToPage(element) {
     const rect = element.getBoundingClientRect();
     const scrollTop = window.scrollY || window.pageYOffset;
@@ -49,4 +54,18 @@ function getPositionRelativeToPage(element) {
     const left = rect.left + scrollLeft;
 
     return {top, left};
+}
+
+
+function showMore(btn) {
+    let projectCard = btn.parentNode.parentNode;
+    let readMoreDiv = projectCard.querySelector(".show-more");
+
+    if (readMoreDiv.classList.contains("hidden")) {
+        readMoreDiv.classList.remove("hidden");
+        btn.text = "Show less";
+    } else {
+        readMoreDiv.classList.add("hidden");
+        btn.text = "Show more";
+    }
 }
