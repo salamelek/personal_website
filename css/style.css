@@ -243,16 +243,35 @@ header img {
 
 .show-more-card {
     background: var(--bcg-color);
-    position: fixed;
-    padding: 1em;
     z-index: 1;
-    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     max-width: 60em;
-    margin: 3em 2em 2em;
+    padding: 3em;
     overflow-y: scroll;
-    min-height: fit-content;
-    max-height: 100%;
 }
+
+/* experimental designs
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bcg-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--elements-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+*/
 
 .blur-bcg {
     position: fixed;
@@ -620,15 +639,15 @@ html {
     }
 
     nav,
-    main,
-    .show-more-card {
+    main {
         padding: 3em;
     }
 
     .curriculum-sheet,
     .project-card,
     .index-card,
-    header {
+    header,
+    .show-more-card {
         border-radius: 1em;
     }
 
