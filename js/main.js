@@ -61,27 +61,41 @@ function showMore(btn) {
     let projectCard = btn.parentNode.parentNode;
     let readMoreDiv = projectCard.querySelector(".show-more");
     let blurBcg = document.getElementById("blur-bcg");
+    let showMoreCard = document.getElementById("show-more-card");
+
+    let h2 = projectCard.querySelector("h2");
+    let smH2 = showMoreCard.querySelector("h2");
+    let preview = projectCard.querySelector(".preview");
+    let smPreview = showMoreCard.querySelector(".preview");
+    let hidden = projectCard.querySelector(".show-more");
+    let smHidden = showMoreCard.querySelector(".show-more");
 
     if (readMoreDiv.classList.contains("hidden")) {
-        // expand reading section
-        readMoreDiv.classList.remove("hidden");
-        btn.text = "Show less";
-        projectCard.classList.add("expanded");
+        expand();
+    } else {
+        retract();
+    }
 
+    function expand() {
         blurBcg.classList.remove("behind");
+        showMoreCard.classList.remove("hidden");
+
+        // add text
+        smH2.innerText = h2.innerText;
+        smPreview.innerHTML = preview.innerHTML;
+        smHidden.innerHTML = hidden.innerHTML;
+
+        document.querySelector("body").classList.add("stop-scroll");
 
         // add event listener for better user experience
         blurBcg.addEventListener("click", () => {
             retract();
         })
-    } else {
-        retract();
     }
 
     function retract() {
-        readMoreDiv.classList.add("hidden");
-        btn.text = "Show more";
-        projectCard.classList.remove("expanded");
         blurBcg.classList.add("behind");
+        showMoreCard.classList.add("hidden");
+        document.querySelector("body").classList.remove("stop-scroll");
     }
 }

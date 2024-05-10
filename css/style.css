@@ -239,21 +239,19 @@ header img {
     color: var(--text-color);
 }
 
-/*READ MORE*/
+/*SHOW MORE*/
 
-.preview {
-
-}
-
-.show-more {
-
-}
-
-.expanded {
-    position: absolute;
-    max-width: 60em;
-    justify-self: center;
+.show-more-card {
+    background: var(--bcg-color);
+    position: fixed;
+    padding: 1em;
     z-index: 1;
+    top: 0;
+    max-width: 60em;
+    margin: 3em 2em 2em;
+    overflow-y: scroll;
+    min-height: fit-content;
+    max-height: 100%;
 }
 
 .blur-bcg {
@@ -267,6 +265,10 @@ header img {
 
 .behind {
     z-index: -1;
+}
+
+.stop-scroll {
+    overflow: hidden;
 }
 
 /*CURRICULUM*/
@@ -617,16 +619,10 @@ html {
         justify-content: center;
     }
 
-    nav {
+    nav,
+    main,
+    .show-more-card {
         padding: 3em;
-    }
-
-    main {
-        padding: 3em;
-    }
-
-    .expanded {
-        margin: 0 1em;
     }
 
     .curriculum-sheet,
