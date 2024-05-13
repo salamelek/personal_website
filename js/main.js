@@ -1,3 +1,14 @@
+window.addEventListener('scroll', function() {
+    let backToTopBtn = document.getElementById("back-to-top-btn");
+
+    if (window.scrollY > 0) {
+        backToTopBtn.classList.remove("hidden");
+    } else {
+        backToTopBtn.classList.add("hidden");
+    }
+});
+
+
 function copyText(element, text) {
     let trimmedText = text.split('\n').map(line => line.trim()).join('\n').trim();
     navigator.clipboard.writeText(trimmedText);

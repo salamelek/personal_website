@@ -243,16 +243,16 @@ header img {
 /*SHOW MORE*/
 
 .show-more-card {
-    background: var(--bcg-color);
     position: fixed;
-    padding: 1em;
-    z-index: 3;
     top: 0;
     left: 0;
     right: 0;
-    min-width: calc(100% - 4em);
-    max-width: 60em !important;
-    margin: 3em 2em 2em;
+
+    background: var(--bcg-color);
+    padding: 1em;
+    z-index: 3;
+    /*Center the div by using margin*/
+    margin: 3em max(calc((100% - 60em) / 2), 2em) 2em;
     max-height: calc(100% - 5em);
     overflow-y: auto;
 }
@@ -531,7 +531,6 @@ html {
 }
 
 .top-btn-container {
-    /*position: absolute;*/
     position: fixed;
     right: 2em;
     bottom: 2em;
