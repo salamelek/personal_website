@@ -248,6 +248,8 @@ header img {
     padding: 1em;
     z-index: 3;
     top: 0;
+    left: 0;
+    right: 0;
     min-width: calc(100% - 4em);
     max-width: 60em !important;
     margin: 3em 2em 2em;
