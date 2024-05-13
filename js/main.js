@@ -85,6 +85,8 @@ function showMore(btn) {
         smPreview.innerHTML = preview.innerHTML;
         smHidden.innerHTML = hidden.innerHTML;
 
+        showMoreCard.scrollTop = 0;
+
         document.querySelector("body").classList.add("stop-scroll");
 
         // add event listener for better user experience
