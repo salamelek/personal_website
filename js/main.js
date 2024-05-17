@@ -99,6 +99,7 @@ function showMore(btn) {
         showMoreCard.scrollTop = 0;
 
         document.querySelector("body").classList.add("stop-scroll");
+        showMoreCard.focus();
 
         // add event listener for better user experience
         blurBcg.addEventListener("click", () => {

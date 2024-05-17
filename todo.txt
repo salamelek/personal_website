@@ -1,2 +1,0 @@
-animated links
-add focus to read more and + side bar hidden?
