@@ -1,9 +1,2 @@
-dark/light mode for icons:
-    - lightbulb
-    - back to top
-    - copy
-
-
-
 animated links
 add focus to read more and + side bar hidden?
