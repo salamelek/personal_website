@@ -135,7 +135,7 @@ nav {
 
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
 
     transform: scale(0);
     transition: var(--delay-mid) ease;
